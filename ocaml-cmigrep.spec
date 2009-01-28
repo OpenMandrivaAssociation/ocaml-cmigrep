@@ -25,6 +25,7 @@ BuildRequires:  ocaml = %{ocaml_major}.%{ocaml_minor}
 BuildRequires:  ocaml-findlib
 BuildRequires:  ocaml-findlib-devel
 BuildRequires:  ocaml-pcre-devel
+BuildRequires:  ncurses-devel
 
 
 %description
