@@ -6,7 +6,7 @@ Version:        1.5
 Release:        %mkrel 1
 Summary:        Search OCaml compiled interface (cmi) files
 
-Group:          Development/Libraries
+Group:          Development/Other
 License:        GPLv2+
 URL:            http://homepage.mac.com/letaris/
 Source0:        http://homepage.mac.com/letaris/cmigrep-%{version}.tar.bz2
