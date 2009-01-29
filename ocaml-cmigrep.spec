@@ -74,13 +74,13 @@ strip cmigrep
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-install -m 0755 cmigrep $RPM_BUILD_ROOT%{_bindir}
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_bindir}
+install -m 0755 cmigrep %{buildroot}%{_bindir}
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 
 %files
