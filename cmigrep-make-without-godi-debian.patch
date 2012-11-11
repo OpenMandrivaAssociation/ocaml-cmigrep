@@ -1,0 +1,31 @@
+## 01make-without-godi.dpatch by Ralf Treinen <treinen@debian.org>
+##
+## DP: Compile without godi. Provide directly the include directories for
+## DP: the compiler-libs.
+
+@DPATCH@
+diff -urNad trunk~/Makefile trunk/Makefile
+--- trunk~/Makefile	2007-04-01 16:43:39.000000000 +0200
++++ trunk/Makefile	2007-07-07 10:18:23.000000000 +0200
+@@ -16,17 +16,15 @@
+ includecore.cmo includemod.cmo parmatch.cmo typetexp.cmo stypes.cmo	\
+ typecore.cmo typedecl.cmo typeclass.cmo typemod.cmo cmigrep.ml
+ 
+-
+-GODI_CONF=$(shell godi_confdir)
+-GODI_BASE=$(shell cat $(GODI_CONF)/godi.conf | grep ^LOCALBASE | sed -e 's/LOCALBASE *= *//')
+-GODI_LIB=$(GODI_BASE)/lib/ocaml/compiler-lib
++COMPILERLIBFLAGS=-I compiler/parsing -I compiler/typing     \
++-I compiler/utils
+ 
+ all:
+-	ocamlfind ocamlopt -o cmigrep -I $(GODI_LIB) \
++	ocamlfind ocamlopt -o cmigrep $(COMPILERLIBFLAGS) \
+ 	-package pcre,findlib,unix -linkpkg $(SOURCES)
+ 
+ byte:
+-	ocamlfind ocamlc -o cmigrep -I $(GODI_LIB) \
++	ocamlfind ocamlc -o cmigrep $(COMPILERLIBFLAGS) \
+ 	-package pcre,findlib,unix -linkpkg $(BYTESOURCES)
+ 
+ install:

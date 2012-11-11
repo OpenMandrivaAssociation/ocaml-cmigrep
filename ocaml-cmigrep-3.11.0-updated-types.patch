@@ -1,0 +1,20 @@
+--- cmigrep-1.5.orig/cmigrep.ml	2008-04-02 01:37:07.000000000 +0100
++++ cmigrep-1.5/cmigrep.ml	2008-11-20 17:13:39.000000000 +0000
+@@ -304,7 +304,7 @@
+     (function
+        | Tsig_type (id, type_decl, _rec_status) ->
+            begin match type_decl.type_kind with
+-           | Type_variant (constructors, _private) ->
++           | Type_variant constructors ->
+                List.iter
+                  (fun (name, type_exprs) ->
+                     if Pcre.pmatch ~rex:exp name then begin
+@@ -382,7 +382,7 @@
+     (function
+        | Tsig_type (id, type_decl, _rec_status) ->
+            begin match type_decl.type_kind with
+-           | Type_record (labels, _, _) ->
++           | Type_record (labels, _) ->
+                List.iter
+                  (fun (name, mutable_flag, type_expr) ->
+                     if Pcre.pmatch ~rex:exp name then begin
