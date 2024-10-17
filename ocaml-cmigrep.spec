@@ -8,7 +8,7 @@ Summary:        Search OCaml compiled interface (cmi) files
 
 Group:          Development/Other
 License:        GPLv2+
-URL:            http://homepage.mac.com/letaris/
+URL:            https://homepage.mac.com/letaris/
 Source0:        http://homepage.mac.com/letaris/cmigrep-%{version}.tar.bz2
 Source1:        http://caml.inria.fr/distrib/ocaml-%{ocaml_major}/ocaml-%{ocaml_major}.%{ocaml_minor}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
