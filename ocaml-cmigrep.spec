@@ -21,6 +21,7 @@ Patch3:         ocaml-3.11.0-ppc64.patch
 # Sent upstream on 2008-11-20.
 Patch10:        ocaml-cmigrep-3.11.0-updated-types.patch
 
+BuildRequires:	make
 BuildRequires:  ocaml = %{ocaml_major}.%{ocaml_minor}
 BuildRequires:  ocaml-findlib
 BuildRequires:  ocaml-findlib-devel
