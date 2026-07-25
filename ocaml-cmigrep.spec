@@ -3,7 +3,7 @@
 
 Name:           ocaml-cmigrep
 Version:        1.5
-Release:        %mkrel 4
+Release:        5
 Summary:        Search OCaml compiled interface (cmi) files
 
 Group:          Development/Other
